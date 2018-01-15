@@ -12,7 +12,13 @@ get '/about' do
   "This is about lifestyle."
 end
 
-get '/cat' do
-@random = ["Lewis", "Alexandra"].sample
-erb(:index)
+get '/random-cat' do
+  @name = ["Lewis", "Alexandra"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  p params[:name]
+  @name = params[:name]
+  erb(:index)
 end
